@@ -1,35 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import { useState } from "react";
+import { Alert, Platform } from "react-native";
+import styled from "styled-components/native";
+import { Column } from "../ui";
+import { useForm } from "react-hook-form";
+import BookingButton from "../components/bottomSheet/BookingButton";
+import BoatNameInput from "../components/inputs/BoatNameInput";
+import BoatLengthInput from "../components/inputs/BoatLengthInput";
+import { useNotifications } from "react-native-notificated";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ModalScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onBlur" });
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </View>
+  const { notify } = useNotifications();
+  const navigation = useNavigation();
+
+  const onSubmit = () => {
+    navigation.goBack();
+    notify("success", {
+      params: {
+        title: "Booking Successful!",
+      },
+    });
+  };
+
+  return (
+    <ScreenWrapper behavior={Platform.OS === "ios" ? "padding" : "height"}>
+      <BoatNameInput control={control} errors={errors} />
+      <BoatLengthInput control={control} errors={errors}></BoatLengthInput>
+      <BookingButton
+        title={"Submit"}
+        height={"12%"}
+        width={"90%"}
+        onPress={handleSubmit(onSubmit)}
+      />
+    </ScreenWrapper>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+const ScreenWrapper = styled.KeyboardAvoidingView`
+  background-color: ${({ theme }) => theme.palette.primary};
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
