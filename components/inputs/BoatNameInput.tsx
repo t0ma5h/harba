@@ -5,7 +5,7 @@ const BoatNameInput = ({
   control,
   errors,
 }: FormHookInputWrapper): JSX.Element => {
-  const nameRegex = new RegExp(/^[a-zA-Z]+$/i);
+  const nameRegex = new RegExp(/^[a-zA-Z ąčęėįšųūĄČĘĖĮŠŲŪ]+$/i);
 
   return (
     <CommonFormsHookInput
