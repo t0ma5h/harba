@@ -45,8 +45,8 @@ const BookingButtonTouchable = styled(TouchableOpacity)<Dimensions>`
   bottom: 0;
   width: ${({ width }) => (width ? width : `80%`)};
   height: ${({ height }) => (height ? height : `15%`)};
-  border-top-left-radius: 20;
-  border-top-right-radius: 20;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 `;
 
 export default BookingButton;

@@ -10,21 +10,25 @@ import HarborImageWithOverlay from "./HarborImageWithOverlay";
 type HarborInfoProps = {
   harbor: Harbor;
 };
+
+type CarouselItem = {
+  index: number;
+  item: string;
+};
+
 const HarborInfo = ({ harbor }: HarborInfoProps) => {
-  const isCarousel = useRef(null);
   return (
     <InfoWrapper>
       <CarouselContainer>
         <Carousel
           layout="stack"
           layoutCardOffset={0}
-          ref={isCarousel}
           style={{ padding: 0, margin: 0, justifyContent: "center" }}
           data={[
-            +"https://harba.co/wp-content/uploads/2021/09/Lango-Lystbadehavn-from-above-255x255.jpg",
             "https://harba.co/wp-content/uploads/2021/09/Lango-Lystbadehavn-from-above-255x255.jpg",
-            "https://harba.co/wp-content/uploads/2021/09/Lango-Lystbadehavn-from-above-255x255.jpg",
-          ]}
+            "https://harba.co/wp-content/uploads/2019/01/1-Asaa-havn-255x255.jpg",
+            "https://harba.co/wp-content/uploads/2020/09/Aarhus-Slipway-Association-night-view-min-255x255.jpg",
+          ]} //// Images from API were not available, 404
           renderItem={CarouselCardItem}
           sliderWidth={Dimensions.get("screen").width - 24}
           itemWidth={Dimensions.get("screen").width - 24}
@@ -38,11 +42,12 @@ const HarborInfo = ({ harbor }: HarborInfoProps) => {
   );
 };
 
-const CarouselCardItem = () => {
+const CarouselCardItem = ({ item }: CarouselItem) => {
+  if (!item) return null;
   return (
     <HarborImage
       source={{
-        uri: "https://harba.co/wp-content/uploads/2021/09/Lango-Lystbadehavn-from-above-255x255.jpg", //// Images from API were not available, 404
+        uri: item,
       }}
       resizeMode={"cover"}
     ></HarborImage>
@@ -52,10 +57,10 @@ const CarouselCardItem = () => {
 const InfoWrapper = styled(Column)`
   overflow: hidden;
   justify-content: flex-start;
-  width: ${Dimensions.get("screen").width - 24};
-  height: ${Dimensions.get("screen").width / 2 - 24};
+  width: ${Dimensions.get("screen").width - 24}px;
+  height: ${Dimensions.get("screen").width / 2 - 24}px;
   padding: 12px;
-  border-radius: ${Dimensions.get("screen").width / 2};
+  border-radius: ${Dimensions.get("screen").width / 2}px;
   align-self: center;
 `;
 
@@ -65,10 +70,10 @@ const CarouselContainer = styled.View`
   bottom: 0;
   align-items: center;
   justify-content: center;
-  width: ${Dimensions.get("screen").width - 24};
-  height: ${Dimensions.get("screen").width - 24};
-  border-radius: ${Dimensions.get("screen").width / 2};
-  border-width: ${({ theme }) => theme.paddings.buttonContainer};
+  width: ${Dimensions.get("screen").width - 24}px;
+  height: ${Dimensions.get("screen").width - 24}px;
+  border-radius: ${Dimensions.get("screen").width / 2}px;
+  border-width: ${({ theme }) => theme.paddings.buttonContainer}px;
   border-color: rgba(134, 199, 246, 0.7);
   align-self: center;
 `;

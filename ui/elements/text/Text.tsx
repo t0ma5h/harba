@@ -5,7 +5,7 @@ const Text = styled.Text<{
   fontSize?: string | number;
   color?: string;
 }>`
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "16px")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize + "px" : "16px")};
   font-family: ${({ bold }) => (bold ? "raleway-bold" : "raleway")};
   justify-content: center;
   align-items: center;
