@@ -12,7 +12,7 @@
 ## Current issues 🛠️
 The app runs better on iOS, didn't have enough time to optimize for android that much 😄 
 Also I removec custom markers due to performance issues on Android. There commented code inside ``Map.tsx``.
-
+Aaand didn't have time for tests, although jest is added as a dependancy 😃. Can show my own test code on request.
 ### API 
 
 ## The images provided by the API no longer exist, e.g.: 
