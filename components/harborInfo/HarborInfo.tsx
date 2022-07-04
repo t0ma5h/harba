@@ -30,8 +30,8 @@ const HarborInfo = ({ harbor }: HarborInfoProps) => {
             "https://harba.co/wp-content/uploads/2020/09/Aarhus-Slipway-Association-night-view-min-255x255.jpg",
           ]} //// Images from API were not available, 404
           renderItem={CarouselCardItem}
-          sliderWidth={Dimensions.get("screen").width - 24}
-          itemWidth={Dimensions.get("screen").width - 24}
+          sliderWidth={Dimensions.get("window").width - 24}
+          itemWidth={Dimensions.get("window").width - 24}
           inactiveSlideShift={0}
           useScrollView={true}
           indicatorStyle={"white"}
@@ -49,7 +49,7 @@ const CarouselCardItem = ({ item }: CarouselItem) => {
       source={{
         uri: item,
       }}
-      resizeMode={"cover"}
+      resizeMode={"contain"}
     ></HarborImage>
   );
 };
@@ -70,23 +70,12 @@ const CarouselContainer = styled.View`
   bottom: 0;
   align-items: center;
   justify-content: center;
-  width: ${Dimensions.get("screen").width - 24}px;
-  height: ${Dimensions.get("screen").width - 24}px;
-  border-radius: ${Dimensions.get("screen").width / 2}px;
-  border-width: ${({ theme }) => theme.paddings.buttonContainer}px;
+  width: ${Dimensions.get("window").width - 24}px;
+  height: ${Dimensions.get("window").width - 24}px;
+  border-radius: ${Dimensions.get("screen").width / 2};
+  border-width: ${({ theme }) => theme.paddings.buttonContainer};
   border-color: rgba(134, 199, 246, 0.7);
   align-self: center;
-`;
-
-const Overlay2 = styled.View`
-  position: absolute;
-  top: -30%;
-  background-color: rgba(134, 199, 246, 0.7);
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 50%;
-  border-radius: 500px;
 `;
 
 export default HarborInfo;

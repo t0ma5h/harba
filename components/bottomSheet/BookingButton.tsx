@@ -1,4 +1,9 @@
-import { Pressable, StyleSheet } from "react-native";
+import {
+  Dimensions as ScreenDimensions,
+  Platform,
+  Pressable,
+  StyleSheet,
+} from "react-native";
 import { Column, Text } from "../../ui";
 import styled from "styled-components/native";
 import { TouchableOpacity } from "@gorhom/bottom-sheet";
@@ -37,14 +42,19 @@ const BookingButtonContainer = styled(Column)`
   border-top-right-radius: 20px;
 `;
 
-const BookingButtonTouchable = styled(TouchableOpacity)<Dimensions>`
+const BookingButtonTouchable = styled.TouchableOpacity<Dimensions>`
   background-color: ${({ theme, disabled }) =>
     disabled ? theme.palette.disabled : theme.palette.secondary};
   align-self: center;
   position: absolute;
   bottom: 0;
-  width: ${({ width }) => (width ? width : `80%`)};
-  height: ${({ height }) => (height ? height : `15%`)};
+  ${({ width, height }) =>
+    Platform.OS === "android"
+      ? `width: ${ScreenDimensions.get("window").width};
+      height: ${ScreenDimensions.get("window").height * 0.15}`
+      : `width: ${width ? width : `80%`};
+      position: absolute;
+      height: ${height ? height : `15%`}`}
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;

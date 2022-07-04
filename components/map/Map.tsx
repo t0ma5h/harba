@@ -44,10 +44,11 @@ const MapComponent = () => {
                   }}
                   onPress={() => toggleModal(harbor)}
                 >
-                  <CustomMarker
+                  {/* THE CUSTOM MARKER CAUSED FOME PERFORMANCE ISSUES AS IT SHOULD BE ADDED A BIT DIFFERENTLY */}
+                  {/* <CustomMarker
                     source={require("../../assets/images/marker.png")}
                     resizeMode={"contain"}
-                  ></CustomMarker>
+                  ></CustomMarker> */}
                 </Marker>
               ))
             : undefined}

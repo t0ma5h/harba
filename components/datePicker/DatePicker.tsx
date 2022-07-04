@@ -70,7 +70,6 @@ const DatePicker = ({ setValid }: DatePickerProps): JSX.Element => {
         startDate={range.startDate}
         endDate={range.endDate}
         onConfirm={onConfirm}
-        disableStatusBar
         validRange={{
           startDate: new Date(),
         }}

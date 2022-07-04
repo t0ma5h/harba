@@ -21,6 +21,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.t0ma5h.harba"
     },
+    "jsEngine": "hermes",
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",

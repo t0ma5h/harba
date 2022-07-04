@@ -69,7 +69,7 @@ function RootNavigator({ theme }: NavigatorProps) {
       </Stack.Screen>
       <Stack.Group
         screenOptions={{
-          presentation: "formSheet",
+          presentation: "modal",
           headerStyle: {
             backgroundColor: theme.palette.primary,
           },

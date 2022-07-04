@@ -70,12 +70,9 @@ const Sheet = styled(BottomSheet).attrs(({ theme }) => ({
   },
 }))``;
 
-const SheetContentCotainer = styled.View.attrs({
-  contentContainerProps: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-})`
+const SheetContentCotainer = styled.View`
+  align-items: center;
+  justify-content: center;
   flex: 1;
   background-color: ${({ theme }) => theme.palette.primary};
 `;
