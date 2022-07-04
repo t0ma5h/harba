@@ -10,6 +10,8 @@
 
 
 ## Current issues 🛠️
+The app runs better on iOS, didn't have enough time to optimize for android that much 😄
+
 ### API 
 
 ## The images provided by the API no longer exist, e.g.: 
@@ -27,7 +29,3 @@ Some libraries are currently throwing warining because of outdated stuff, which 
  - ``expo-fast-image``
     - Cannot find a declaration file for module ``expo-fast-image``.
     - Logs some redundant errors.
-
-
-### Architecture
-### 
