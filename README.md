@@ -12,7 +12,7 @@
 
 ## The images provided by the API no longer exist, e.g.: 
  - https://harba.co/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/harbor/image/4f857c03-7d0b-a48d-ed0c-e622cc1093d9_app.jpg does not display ✖️
- -https://harba.co/wp-content/uploads/harbor/image/4f857c03-7d0b-a48d-ed0c-e622cc1093d9_app.jpg does not display either ✖️
+ - https://harba.co/wp-content/uploads/harbor/image/4f857c03-7d0b-a48d-ed0c-e622cc1093d9_app.jpg does not display either ✖️
 
 For demo reasons, three images have been stubbed into the code ✔️
 
