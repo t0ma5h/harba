@@ -10,7 +10,8 @@
 
 
 ## Current issues 🛠️
-The app runs better on iOS, didn't have enough time to optimize for android that much 😄
+The app runs better on iOS, didn't have enough time to optimize for android that much 😄 
+Also I removec custom markers due to performance issues on Android. There commented code inside ``Map.tsx``.
 
 ### API 
 
