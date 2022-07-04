@@ -3,6 +3,7 @@ import { Control, UseControllerProps, FieldErrorsImpl } from "react-hook-form";
 export type FormHookInput = FormHookInputControl &
   FormHookError & {
     name: string;
+    label?: string;
     numeric?: boolean;
     placeHolder?: string;
     rules: UseControllerProps["rules"];

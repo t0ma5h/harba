@@ -1,11 +1,16 @@
 import styled from "styled-components/native";
 
-const Text = styled.Text<{ bold?: boolean }>`
-  font-size: 16px;
+const Text = styled.Text<{
+  bold?: boolean;
+  fontSize?: string | number;
+  color?: string;
+}>`
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "16px")};
   font-family: ${({ bold }) => (bold ? "raleway-bold" : "raleway")};
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.palette.textColor};
+  text-align: center;
+  color: ${({ theme, color }) => (color ? color : theme.palette.textColor)};
 `;
 
 export default Text;

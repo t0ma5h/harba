@@ -1,12 +1,13 @@
 import styled from "styled-components/native";
+import { Dimensions } from "../../constants/types/Dimensions";
 
-const CommonTextInput = styled.TextInput`
-  width: 80%;
-  height: 7%;
-  padding: 12px;
-  margin-top: 12px;
+const CommonTextInput = styled.TextInput<Dimensions>`
+  width: ${({ width }) => (width ? width : "80%")};
+  height: ${({ height }) => (height ? height : "7%")};
+  padding: ${({ theme }) => theme.paddings.buttonContainer};
+  margin: ${({ theme }) => theme.margins.button};
   background-color: #e8e8e8;
-  border-radius: 50;
+  border-radius: 50px;
 `;
 
 export default CommonTextInput;

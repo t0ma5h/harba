@@ -9,9 +9,9 @@
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#000000",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/marker.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#244964"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,8 +23,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#244964"
       },
       "package": "com.t0ma5h.harba"
     },

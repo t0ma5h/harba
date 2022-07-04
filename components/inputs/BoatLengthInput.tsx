@@ -12,9 +12,9 @@ const BoatLengthInput = ({
       control={control}
       errors={errors}
       name={"length"}
+      label={"Boat length in meters (0 - 100)"}
       characterLimit={3}
       numeric
-      placeHolder={"Boat lenght in meters (0 - 100)"}
       rules={{
         required: {
           value: true,

@@ -12,9 +12,17 @@ const commonTheme: CommonProps = {
   borderRadius: "12px",
   sizes: {
     text: {
-      header: 24,
+      header: 20,
       body: 12,
     },
+  },
+  paddings: {
+    buttonContainer: "12px",
+    buttonContainerSmall: "6px",
+    screenContainer: "36px",
+  },
+  margins: {
+    button: "12px",
   },
 };
 
@@ -22,6 +30,7 @@ const darkPalete: PaletteProps = {
   palette: {
     textColor: "#132736",
     primary: "#132736",
+    disabled: "grey",
     secondary: "#014d2d",
     background: "#000",
     tint: tintColorDark,
@@ -34,6 +43,7 @@ const lightPalette: PaletteProps = {
   palette: {
     textColor: "#244964",
     primary: "#244964",
+    disabled: "grey",
     secondary: "#00A662",
     background: "#fff",
     tint: tintColorLight,
@@ -42,12 +52,12 @@ const lightPalette: PaletteProps = {
   },
 };
 
-const darkTheme: DefaultTheme = {
+export const darkTheme: DefaultTheme = {
   ...commonTheme,
   ...darkPalete,
 };
 
-const lightTheme: DefaultTheme = {
+export const lightTheme: DefaultTheme = {
   ...commonTheme,
   ...lightPalette,
 };

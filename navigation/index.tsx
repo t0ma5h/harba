@@ -77,6 +77,7 @@ function RootNavigator({ theme }: NavigatorProps) {
           headerShadowVisible: false,
           headerTitleStyle: {
             color: theme.palette.secondary,
+            fontSize: theme.sizes.text.header,
           },
         }}
       >

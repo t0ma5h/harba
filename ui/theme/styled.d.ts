@@ -12,6 +12,14 @@ export interface CommonProps {
       body: number;
     };
   };
+  paddings: {
+    buttonContainerSmall: number | string;
+    buttonContainer: number | string;
+    screenContainer: number | string;
+  };
+  margins: {
+    button: number | string;
+  };
 }
 
 export interface PaletteProps {
@@ -19,6 +27,7 @@ export interface PaletteProps {
     textColor: string;
     primary: string;
     secondary: string;
+    disabled: string;
     background: string;
     tint: string;
     tabIconDefault: string;

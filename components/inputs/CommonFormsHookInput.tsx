@@ -1,5 +1,8 @@
 import { Controller } from "react-hook-form";
+import styled from "styled-components/native";
 import { FormHookInput } from "../../constants/types";
+import { Dimensions } from "../../constants/types/Dimensions";
+import { InputLabel } from "../labels/InputLabel";
 import CommonTextInput from "./CommonTextInput";
 import ErrorLabel from "./ErrorLabel";
 
@@ -10,25 +13,35 @@ const CommonFormsHookInput = ({
   characterLimit,
   errors,
   placeHolder,
+  label,
   numeric = false,
-}: FormHookInput) => {
+  width = "80%",
+  height = "7%",
+}: FormHookInput & Dimensions) => {
   return (
     <>
       <Controller
         control={control}
         name={name}
         render={({ field: { onChange, value, onBlur } }) => (
-          <CommonTextInput
-            value={value}
-            onBlur={onBlur}
-            keyboardType={numeric ? "numeric" : "default"}
-            onChangeText={(value) =>
-              characterLimit && value.length > characterLimit
-                ? undefined
-                : onChange(value)
-            }
-            placeholder={placeHolder}
-          />
+          <>
+            <InputLabel width={width} bold>
+              {label}
+            </InputLabel>
+            <CommonTextInput
+              value={value}
+              width={width}
+              height={height}
+              onBlur={onBlur}
+              keyboardType={numeric ? "numeric" : "default"}
+              onChangeText={(value) =>
+                characterLimit && value.length > characterLimit
+                  ? undefined
+                  : onChange(value)
+              }
+              placeholder={placeHolder}
+            />
+          </>
         )}
         rules={rules}
       />

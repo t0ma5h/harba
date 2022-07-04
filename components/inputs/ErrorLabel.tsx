@@ -9,7 +9,7 @@ type ErrorLabelProps = {
 const ErrorLabel = ({ error }: ErrorLabelProps): JSX.Element => {
   return (
     <View>
-      <Text bold style={{ color: "red" }}>
+      <Text bold color="red">
         {error?.toString()}
       </Text>
     </View>

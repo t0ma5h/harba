@@ -2,23 +2,25 @@ import { Pressable, StyleSheet } from "react-native";
 import { Column, Text } from "../../ui";
 import styled from "styled-components/native";
 import { TouchableOpacity } from "@gorhom/bottom-sheet";
+import { Dimensions } from "../../constants/types/Dimensions";
 
 type BookingButtonProps = {
   onPress?: () => void;
   title: string;
-  width?: string | number;
-  height?: string | number;
-};
+  disabled?: boolean;
+} & Dimensions;
 
 const BookingButton = ({
   onPress,
   title,
   width,
   height,
+  disabled,
 }: BookingButtonProps) => {
   return (
     <BookingButtonTouchable
       width={width}
+      disabled={disabled}
       activeOpacity={0.6}
       height={height}
       onPress={onPress}
@@ -35,16 +37,14 @@ const BookingButtonContainer = styled(Column)`
   border-top-right-radius: 20px;
 `;
 
-const BookingButtonTouchable = styled(TouchableOpacity)<{
-  width?: string | number;
-  height?: string | number;
-}>`
-  background-color: ${({ theme }) => theme.palette.secondary};
+const BookingButtonTouchable = styled(TouchableOpacity)<Dimensions>`
+  background-color: ${({ theme, disabled }) =>
+    disabled ? theme.palette.disabled : theme.palette.secondary};
   align-self: center;
   position: absolute;
   bottom: 0;
   width: ${({ width }) => (width ? width : `80%`)};
-  height: ${({ height }) => (height ? height : `10%`)};
+  height: ${({ height }) => (height ? height : `15%`)};
   border-top-left-radius: 20;
   border-top-right-radius: 20;
 `;

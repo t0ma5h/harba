@@ -12,6 +12,7 @@ const BoatNameInput = ({
       control={control}
       errors={errors}
       name={"name"}
+      label={"Boat Name"}
       characterLimit={20}
       placeHolder={"Boat Name"}
       rules={{
