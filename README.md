@@ -1,12 +1,13 @@
 # Harba application demo
 
-<img width="286" alt="image" src="https://user-images.githubusercontent.com/55575853/177132683-943612c0-7643-4d7d-bfaa-1915a3f0509a.png"><img width="287" alt="image" src="https://user-images.githubusercontent.com/55575853/177133544-d24cd437-a812-490d-8f2a-6469e39464e0.png"><img width="288" alt="image" src="https://user-images.githubusercontent.com/55575853/177134219-c53ab0a8-0dd7-48ef-9935-ace81e6a5eb6.png"><img width="289" alt="image" src="https://user-images.githubusercontent.com/55575853/177134297-394a0493-a0e6-466a-8abf-2a88da0b92f9.png">
+<img width="286" alt="image" src="https://user-images.githubusercontent.com/55575853/177132683-943612c0-7643-4d7d-bfaa-1915a3f0509a.png"><img width="287" alt="image" src="https://user-images.githubusercontent.com/55575853/177133544-d24cd437-a812-490d-8f2a-6469e39464e0.png"><img width="288" alt="image" src="https://user-images.githubusercontent.com/55575853/177134219-c53ab0a8-0dd7-48ef-9935-ace81e6a5eb6.png">
 
 ## Setup and launch 🧰
 - Clone or Fork the repo
 - Run ``yarn install`` inside root directory
 - Run ``expo start``
 - That's it!
+
 
 
 ## Current issues 🛠️
