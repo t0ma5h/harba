@@ -32,4 +32,4 @@ Some libraries are currently throwing warining because of outdated stuff, which 
     - Cannot find a declaration file for module ``expo-fast-image``.
     - Logs some redundant errors.
  - ``OpenWeather``
-    - The api key didn't become active for a long time, so I used ``GisWeather`` instead
+    - The api key didn't become active for a long time, so I used ``open-meteo`` instead
